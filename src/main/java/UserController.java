@@ -1,10 +1,7 @@
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class UserController {
-    ArrayList<User> userList;
+    ArrayList<User>  userList;
 
     void loadUserList() {
         userList = new ArrayList<User>();
@@ -62,7 +59,7 @@ public class UserController {
             return true;
     }
 
-    User createUser(String fio, String email, String login, String password, String passwordConfirmation) throws CreateUserException {
+    User createUser(String fio, String email, String login, String password, String passwordConfirmation) throws CreateUserException { //++++
         if (!fio.matches("[\\p{L}| ]+")) { //"(?ui)[\\p{L}| ]"
             throw new CreateUserException("Не корректное ФИО");
         }
